@@ -27,15 +27,15 @@ $ar = mysqli_fetch_array($result);
 
 if($row==1) {
     session_start();
-    $_SESSION["name"] = $ar['your_name'];
-    if (isset($_SESSION['name']))
-    {
-        echo 'Tên Đăng Nhập Là: ' . $_SESSION['name'];
-    }
+    $_SESSION["name"] = $_POST["your_name"];
+
     header("Location:loginSuccess.php");
 
 }
-
+if (isset($_SESSION['name']))
+{
+    echo "Tên Đăng Nhập Là: " . $_SESSION['name'];
+}
 ?>
 
 <script>
